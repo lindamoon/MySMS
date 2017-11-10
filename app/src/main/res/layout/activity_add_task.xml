@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lixb.mysms.act.AddTaskActivity">
+    <RelativeLayout
+        android:padding="2dp"
+        android:background="#333333"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:textSize="20sp"
+            android:textColor="#fcfcfc"
+            android:text="@string/cancel"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="26sp"
+            android:text="@string/title_add_task"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_alignParentRight="true"
+            android:textSize="20sp"
+            android:textColor="#fcfcfc"
+            android:text="@string/save"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_task_common" />
+    </ScrollView>
+
+</LinearLayout>

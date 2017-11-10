@@ -19,3 +19,20 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+#greedao相关
+-keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
+public static java.lang.String TABLENAME;
+}
+-keep class **$Properties
+
+# If you do not use SQLCipher:
+-dontwarn org.greenrobot.greendao.database.**
+# If you do not use Rx:
+-dontwarn rx.**
+
+
+##工具类相关
+-keep class com.blankj.utilcode.** { *; }
+-keepclassmembers class com.blankj.utilcode.** { *; }
+-dontwarn com.blankj.utilcode.**

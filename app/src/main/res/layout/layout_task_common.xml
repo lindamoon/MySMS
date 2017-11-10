@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_add_task_title"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:text="@string/common_title" />
+
+    <EditText
+        android:id="@+id/et_task_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#ff00ff" />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:text="@string/common_description" />
+
+    <EditText
+        android:id="@+id/et_task_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_description" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#ff00ff" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/tv_priority"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/priority" />
+
+        <Spinner
+            android:id="@+id/spinner_priority"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/tv_priority"
+            android:entries="@array/prioritys"></Spinner>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/tv_repeatmode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/repeat_mode" />
+
+        <Spinner
+            android:id="@+id/spinner_repeatmode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/tv_repeatmode"
+            android:entries="@array/repeatmodes"></Spinner>
+
+    </RelativeLayout>
+
+    <!--按天重复-->
+    <LinearLayout
+        android:id="@+id/ll_repeat_day"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/every_offset" />
+
+        <EditText
+            android:id="@+id/et_repeat_day"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="0"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tian" />
+    </LinearLayout>
+
+    <!--按周重复-->
+    <LinearLayout
+        android:id="@+id/ll_repeat_week"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/everyweek" />
+
+        <CheckBox
+            android:id="@+id/repeat_monday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/one" />
+
+        <CheckBox
+            android:id="@+id/repeat_tuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/two" />
+
+        <CheckBox
+            android:id="@+id/repeat_wednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/three" />
+
+        <CheckBox
+            android:id="@+id/repeat_thursday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/four" />
+
+        <CheckBox
+            android:id="@+id/repeat_friday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/five" />
+
+        <CheckBox
+            android:id="@+id/repeat_saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/six" />
+
+        <CheckBox
+            android:id="@+id/repeat_sunday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seven" />
+    </LinearLayout>
+
+    <!--按月重复-->
+    <LinearLayout
+        android:id="@+id/ll_repeat_month"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/everymonth" />
+
+        <EditText
+            android:id="@+id/et_repeat_month"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="@string/hint_day"
+            android:inputType="number"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hao" />
+
+    </LinearLayout>
+
+    <!--按年重复-->
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll_repeat_year"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/every_year" />
+
+        <EditText
+            android:id="@+id/et_repeat_year"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="@string/hint_year"
+            android:inputType="none"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_select_repeat_date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/select_date" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_repeat_no"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/start_date" />
+
+            <TextView
+                android:id="@+id/tv_start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:hint="@string/date_time" />
+
+            <Button
+                android:id="@+id/btn_select_start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:text="@string/select_time" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/deadline" />
+
+            <TextView
+                android:id="@+id/tv_deadline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:hint="@string/date_time" />
+
+            <Button
+                android:id="@+id/btn_select_deadline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:text="@string/select_time" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

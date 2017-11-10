@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="prioritys">
+    <item>无</item>
+    <item>低</item>
+    <item>中</item>
+    <item>高</item>
+    </string-array>
+    <string-array name="repeatmodes" >
+        <item>不重复</item>
+        <item>按天重复</item>
+        <item>按周重复</item>
+        <item>按月重复</item>
+        <item>按年重复</item>
+    </string-array>
+</resources>

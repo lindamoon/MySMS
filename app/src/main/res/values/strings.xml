@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">MySMS</string>
+    <string name="common_title">标题</string>
+    <string name="hint_title">请输入标题</string>
+    <string name="hint_description">请输入描述信息</string>
+    <string name="common_description">描述信息</string>
+    <string name="is_sub_task">是否子任务</string>
+    <string name="priority">优先级</string>
+    <string name="repeat_mode">重复模式</string>
+    <string name="add_task">添加任务</string>
+    <string name="start_date">开始时间</string>
+    <string name="date_time">2000-01-01 00:00:00</string>
+    <string name="select_time">选择时间</string>
+    <string name="deadline">截止时间</string>
+    <string name="repeat_info">重复信息</string>
+    <string name="title_add_task">增加任务</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="one">一</string>
+    <string name="two">二</string>
+    <string name="three">三</string>
+    <string name="four">四</string>
+    <string name="five">五</string>
+    <string name="six">六</string>
+    <string name="seven">日</string>
+    <string name="everyweek">每周</string>
+    <string name="everymonth">每月</string>
+    <string name="hao">号</string>
+    <string name="hint_day">1~31</string>
+    <string name="every_year">每年</string>
+    <string name="hint_year">1月1号</string>
+    <string name="select_date">选择日期</string>
+    <string name="every_offset">每隔</string>
+    <string name="tian">天</string>
+    <string name="task_today">今日任务</string>
 </resources>

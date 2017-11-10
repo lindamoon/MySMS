@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 26
@@ -16,13 +17,33 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    greendao {
+        schemaVersion 5
+        daoPackage 'com.lixb.mysms.db.greendao'
+        targetGenDir 'src/main/java'
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs' //this way we can find the .aar file in libs folder
+        }
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile 'org.greenrobot:greendao:3.2.2'
+    compile 'com.android.support:multidex:1.0.2'
+    compile 'net.zetetic:android-database-sqlcipher:3.5.6'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.blankj:utilcode:1.9.8'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    compile(name:'rxandroid-2.0.1', ext:'aar')
 }
