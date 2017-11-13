@@ -18,10 +18,12 @@ import org.greenrobot.greendao.annotation.OrderBy;
 import org.greenrobot.greendao.annotation.ToMany;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.DaoException;
+import org.greenrobot.greendao.annotation.ToOne;
 import org.greenrobot.greendao.annotation.Unique;
 import com.lixb.mysms.db.greendao.DaoSession;
 import com.lixb.mysms.db.greendao.TaskCommentDao;
 import com.lixb.mysms.db.greendao.TaskDao;
+import com.lixb.mysms.db.greendao.RepeatTaskInfoDao;
 
 /**
  * Created by Administrator on 2017/11/8.
@@ -107,6 +109,7 @@ public class Task {
      * 最后一次操作时间
      */
     private Date lastOperateDate;
+
 
     /**
      * 评论信息

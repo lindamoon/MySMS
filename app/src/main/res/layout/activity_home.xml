@@ -5,31 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lixb.mysms.act.HomeActivity">
+    tools:context="com.lixb.mysms.act.TaskListActivity">
+
     <RelativeLayout
-        android:padding="2dp"
-        android:background="#333333"
         android:layout_width="match_parent"
-        android:layout_height="48dp">
+        android:layout_height="48dp"
+        android:background="#333333"
+        android:padding="2dp">
 
         <TextView
-            android:gravity="center"
-            android:layout_centerInParent="true"
-            android:textColor="#ffffff"
-            android:textSize="26sp"
-            android:text="@string/task_today"
+            android:id="@+id/tv_cur_socre"
+            android:layout_centerVertical="true"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:text="当前积分:0"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/task_today"
+            android:textColor="#ffffff"
+            android:textSize="26sp" />
+
+        <ImageView
+            android:clickable="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_add_task"
+            android:layout_marginRight="5dp"
+            android:src="@mipmap/icon_actionbar_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <com.lixb.mysms.third.PullableListView
+
         android:id="@+id/rv_tasks"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:baselineAligned="false">
 
-    </android.support.v7.widget.RecyclerView>
+    </com.lixb.mysms.third.PullableListView>
 
 
 </LinearLayout>

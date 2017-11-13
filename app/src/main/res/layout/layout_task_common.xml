@@ -3,7 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
 
 
     <TextView
@@ -13,6 +16,9 @@
         android:text="@string/common_title" />
 
     <EditText
+        android:textSize="26sp"
+        android:textColor="#000"
+        android:background="@null"
         android:id="@+id/et_task_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,6 +37,9 @@
         android:text="@string/common_description" />
 
     <EditText
+        android:textSize="22sp"
+        android:textColor="#000000"
+        android:background="@null"
         android:id="@+id/et_task_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,7 +72,11 @@
             android:layout_toRightOf="@id/tv_priority"
             android:entries="@array/prioritys"></Spinner>
     </RelativeLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#ff00ff" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -291,4 +304,9 @@
         </LinearLayout>
 
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#ff00ff" />
 </LinearLayout>

@@ -20,6 +20,38 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+#指定代码的压缩级别0-7
+    -optimizationpasses 7
+
+    #包明不混合大小写
+    -dontusemixedcaseclassnames
+
+    #不去忽略非公共的库类
+    -dontskipnonpubliclibraryclasses
+
+     #优化  不优化输入的类文件
+    -dontoptimize
+
+     #预校验
+    -dontpreverify
+
+     #混淆时是否记录日志
+    -verbose
+     #混淆后映射关系记录文件
+    -printmapping proguardMapping.txt
+
+     # 混淆时所采用的算法
+    -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+
+    #保护注解
+    -keepattributes *Annotation*
+
+    -ignorewarnings
+
+    #泛型不混淆
+    -keepattributes Signature
+
+#------------------------------------------------------------------------------------------
 #greedao相关
 -keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
 public static java.lang.String TABLENAME;

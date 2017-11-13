@@ -2,7 +2,9 @@ package com.lixb.mysms.base;
 
 import android.support.multidex.MultiDexApplication;
 
+import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.Utils;
+import com.lixb.mysms.constants.SpKeys;
 import com.lixb.mysms.db.greendao.DaoMaster;
 import com.lixb.mysms.db.greendao.DaoSession;
 
@@ -40,5 +42,14 @@ public class App extends MultiDexApplication {
 
     public DaoSession getDaoSession() {
         return daoSession;
+    }
+
+    public void addScore(int score) {
+        int curScore = SPUtils.getInstance().getInt(SpKeys.SCORE);
+        SPUtils.getInstance().put(SpKeys.SCORE, curScore + score);
+    }
+
+    public int getScore() {
+        return SPUtils.getInstance().getInt(SpKeys.SCORE);
     }
 }

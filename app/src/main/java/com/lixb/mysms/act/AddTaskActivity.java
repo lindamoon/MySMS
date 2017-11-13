@@ -31,6 +31,7 @@ import com.lixb.mysms.entity.RepeatTaskInfo;
 import com.lixb.mysms.entity.Task;
 import com.lixb.mysms.entity.enums.PriorityConverter;
 import com.lixb.mysms.entity.enums.RepeatModeConverter;
+import com.lixb.mysms.entity.enums.TaskStatus;
 
 import java.util.Date;
 
@@ -330,6 +331,9 @@ public class AddTaskActivity extends AppCompatActivity {
                 break;
             case 1://日
                 String offsetDayStr = mEtRepeatDay.getText().toString().trim();
+                if (TextUtils.isEmpty(offsetDayStr)) {
+                    offsetDayStr = "0";
+                }
                 int offsetDay = Integer.parseInt(offsetDayStr);
                 if (offsetDay >= 0 && offsetDay <= 365) {
                     mRepeatTaskInfo.setRepeatStrategy(offsetDayStr);
@@ -359,7 +363,7 @@ public class AddTaskActivity extends AppCompatActivity {
                     weekStr=weekStr.concat("6,");
                 }
                 if (mRepeatSunday.isChecked()) {
-                    weekStr=weekStr.concat("7");
+                    weekStr=weekStr.concat("7,");
                 }
                 if (weekStr.length() > 1) {
                     mRepeatTaskInfo.setRepeatStrategy(weekStr);
@@ -382,6 +386,13 @@ public class AddTaskActivity extends AppCompatActivity {
                 break;
 
         }
+
+        //状态 默认
+        mTask.setTaskStatus(TaskStatus.NORMAL);
+
+        //是否子任务
+        mTask.setIsSubTask(false);
+
         LogUtils.d(mTask.toString());
         long insertTask = App.getApplication().getDaoSession().getTaskDao().insert(mTask);
         long insertRepeatTask = App.getApplication().getDaoSession().getRepeatTaskInfoDao().insert(mRepeatTaskInfo);
