@@ -10,15 +10,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".act.TaskListActivity" android:launchMode="singleTask">
+        <activity
+            android:name=".act.HomeActivity" android:theme="@style/HomeActTheme"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".act.AddTaskActivity" android:launchMode="singleTask"/>
-        <activity android:name=".act.TaskDetailActivity" android:launchMode="singleTask"></activity>
+        <activity
+            android:name=".act.AddTaskActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".act.TaskDetailActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".act.TaskListActivity" ></activity>
     </application>
 
 </manifest>

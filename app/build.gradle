@@ -46,4 +46,5 @@ dependencies {
     compile 'com.blankj:utilcode:1.9.8'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     compile(name: 'rxandroid-2.0.1', ext: 'aar')
+    implementation 'com.android.support:design:27.0.1'
 }
